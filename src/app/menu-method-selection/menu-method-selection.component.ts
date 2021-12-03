@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import { increment, decrement, reset } from '../counter.actions';
 
 @Component({
-  selector: 'app-my-counter',
-  templateUrl: './my-counter.component.html',
+  selector: 'menu-method-selection',
+  templateUrl: './menu-method-selection.component.html',
 })
-export class MyCounterComponent {
-  count$: Observable<number>;
+export class MenuMethodSelection {
+  selected: Observable<number>;
 
   constructor(private store: Store<{ count: number }>) {
-    this.count$ = store.select('count');
+    this.selected = store.select('count');
   }
 
   increment() {
@@ -26,7 +26,6 @@ export class MyCounterComponent {
     this.store.dispatch(reset());
   }
 }
-
 
 /*
 Use of this source code is governed by an MIT-style license that
